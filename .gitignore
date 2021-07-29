@@ -29,3 +29,4 @@ __pycache__
 .settings
 .jython_cache
 selenium-screenshot*.png
+geckodriver*.log
