@@ -9,7 +9,7 @@ ${BASE_URL}  http://34.68.27.82/ibpworkbench/controller/auth/login
 
 *** Keywords ***
 Start TestCase
-    Open Browser  ${BASE_URL}  chrome
+    Open Browser  ${BASE_URL}  headlesschrome
     Maximize Browser Window
 
 Finish TestCase
