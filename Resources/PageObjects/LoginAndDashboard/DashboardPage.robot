@@ -2,10 +2,10 @@
 Documentation  Dashboard Page Object
 Library  SeleniumLibrary
 
-
 *** Variables ***
 
 *** Keywords ***
+
 Wait for dashboard elements to load
     # Select the current iframe so that we can locate the elements inside it.
     Wait Until Element Is Visible   //iframe  timeout=50
@@ -35,3 +35,4 @@ Click Launch
     # Select Launch button on dashboard
     Wait Until Element Is Visible   //span[contains(text(), 'Launch')]
     Click Element   //body/jhi-main/div/section/jhi-program/section/div[1]/div[1]/form/div[2]/div[2]/button
+
