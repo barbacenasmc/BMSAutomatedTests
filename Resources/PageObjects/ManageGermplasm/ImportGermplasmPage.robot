@@ -2,53 +2,10 @@
 Documentation     A test suite with a single test for Log In to the BMS
 Library           SeleniumLibrary
 Library           OperatingSystem
-Resource  ../../../../Resources/CommonFunctionality.robot
-Resource  ../../../../Resources/PageObjects/LoginPage.robot
-
-Test Setup  Start TestCase
-#Test Teardown  Finish TestCase
 
 *** Variables ***
 
-*** Test Cases ***
-Import Germplasm Test
-    [documentation]  Import germplasm test using template with complete details
-    [tags]  Smoke
-
-    Login to BMS
-
-    # Select the current iframe so that we can locate the elements inside it.
-    Wait Until Element Is Visible   //iframe  timeout=50
-    Select Frame    //iframe
-    # Sleep for some seconds to wait for page to load
-    # BuiltIn.Sleep  10s
-
-    Wait for dashboard elements to load
-
-    # Check if program to select is currently the default selected program
-    ${IsElementVisible}=  Run Keyword And Return Status    Element Should Be Visible   //span[contains(text(), ${PROGRAM_SELECTED})]
-
-    # Executes Search and Select Program keyword if program is not the default selected program
-    Run Keyword Unless  ${IsElementVisible}    Search and Select Program
-
-    Click Launch
-    Wait for Manage Germplasm to load
-    Select Import Germplasm action
-    Select file to upload
-    Verify if import germplasm screen 1 displays
-    Verify if inventory screen displays
-    Verify if review screen displays
-    Save germplasm
-    Verify if saving new germplasm succeeds
-    Save imported List
-    Verify if saving new list succeeds
-
 *** Keywords ***
-Wait for Manage Germplasm to load
-    # Make sure the view is redirected to Germplasm Manager
-    Wait Until Element Is Visible   //iframe  timeout=50
-    Select Frame    //iframe
-    Wait Until Element Is Visible   //h1[contains(text(), ' Germplasm Manager ')]
 
 Select Import Germplasm action
     # Trigger the Import germplasm action

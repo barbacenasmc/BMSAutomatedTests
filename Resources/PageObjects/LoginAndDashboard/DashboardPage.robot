@@ -1,20 +1,15 @@
 *** Settings ***
+Documentation  Dashboard Page Object
 Library  SeleniumLibrary
 
 *** Variables ***
-#${BASE_URL}  https://bms-centos-1.leafnode.io/ibpworkbench/controller/auth/login
-${BASE_URL}  http://34.68.27.82/ibpworkbench/controller/auth/login
-#${PROGRAM_SELECTED}     SHIELA PROGRAM
-${PROGRAM_SELECTED}     NEW PROGRAM
 
 *** Keywords ***
-Start TestCase
-    Open Browser  ${BASE_URL}  chrome
-    Maximize Browser Window
 
-Finish TestCase
-    Close Browser
 Wait for dashboard elements to load
+    # Select the current iframe so that we can locate the elements inside it.
+    Wait Until Element Is Visible   //iframe  timeout=50
+    Select Frame    //iframe
     # Wait for Crop text
     Wait Until Page Contains Element    //body/jhi-main/div/section/jhi-program/section/div[1]/div[1]/form/div[1]/label/span    timeout=20
     # Wait for Program text
@@ -40,3 +35,4 @@ Click Launch
     # Select Launch button on dashboard
     Wait Until Element Is Visible   //span[contains(text(), 'Launch')]
     Click Element   //body/jhi-main/div/section/jhi-program/section/div[1]/div[1]/form/div[2]/div[2]/button
+
