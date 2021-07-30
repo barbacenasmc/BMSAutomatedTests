@@ -26,10 +26,8 @@ Search and Select Program
     # Enter search keyword for the program to selct
     Wait Until Element Is Visible    //body/span/span/span[1]/input
     Press Keys    //body/span/span/span[1]/input  ${PROGRAM_SELECTED}
-   # Mouse Over    //body/span/span/span[1]/input
 
     # Wait for and select the program being searched from the list
-   # Wait Until Element Is Visible   //li[contains(text(), '${PROGRAM_SELECTED}')]  timeout=25
     Click Element    //li[contains(text(), '${PROGRAM_SELECTED}')]
 Click Launch
     # Select Launch button on dashboard
