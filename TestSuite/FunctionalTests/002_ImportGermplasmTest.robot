@@ -19,14 +19,18 @@ Import Germplasm Test
     [documentation]  Import germplasm test using template with complete details
     [tags]  Smoke
 
+    # From LoginPage
     Login to BMS
+    # From DashboardPage
     Wait for dashboard elements to load
     Search and Select Program
     Click Launch
 
+    #From ManageGermplasmPage
     Wait for Manage Germplasm to load
     Select Import Germplasm action
 
+    #From ImportGermplasmPage
     Select file to upload
     Verify if import germplasm screen 1 displays
     Verify if inventory screen displays
